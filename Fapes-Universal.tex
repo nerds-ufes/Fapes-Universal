@@ -1,0 +1,181 @@
+\documentclass[10pt]{article}
+\usepackage[english, portuges, brazil]{babel}    % hiphenação em portugues
+%\usepackage[hypertex]{hyperref}
+\usepackage{graphicx,url} % support the \includegraphics command and options
+
+\usepackage{color,soul}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{hyperref}
+\usepackage{url}
+%   \def\UrlBreaks{} 
+%   \def\UrlBigBreaks{\do\/\do-} 
+%\usepackage{breakurl}
+\usepackage{setspace}
+
+% Muda o nome das tabelas para Quadro -- todas as seções são tabelas
+\usepackage{caption}
+\captionsetup[table]{name=Quadro}
+
+%\usepackage[latin1]{inputenc} % set input encoding (not needed with XeLaTeX)
+%\usepackage[latin1]{inputenc}
+%\usepackage[num]{abntcite}
+%\usepackage[alf]{abntcite}
+\usepackage{todonotes}
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfigure} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper,bottom=45mm,tmargin=10mm,lmargin=27mm,rmargin=20mm} 
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\setlength{\headheight}{80pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{}\chead{}
+\rhead{\includegraphics[width=7cm]{figuras/logo_fapes.png}}
+\lfoot{}
+\cfoot{\small Fundação de Amparo à Pesquisa e Inovação do Espírito Santo \\
+Tel.: 27 3636-1863/1864/1894 -- editais.duvidas@fapes.es.gov.br}
+\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+% tab size
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{amssymb,amsmath}
+\usepackage{longtable}
+
+\usepackage{color, colortbl}
+\definecolor{Gray}{gray}{0.9}
+
+\usepackage{multirow}
+%\usepackage{lscape}
+\usepackage{pdflscape}
+
+\usepackage[useregional=numeric]{datetime2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Dados a preencher no formulário
+
+% Nome da proposta
+\newcommand{\propostaNome}{NOME COMPLETO DA PROPOSTA DE PESQUISA}
+
+% Proponente
+\newcommand{\proponenteNome}{NOME DO PROPONENTE}
+\newcommand{\proponenteCPF}{000.000.000-00}
+\newcommand{\proponenteRG}{0.000.000}
+\newcommand{\proponenteRGEmissor}{SPTC/ES}
+\newcommand{\proponenteEndereco}{ENDEREÇO RESIDENCIAL COMPLETO}
+\newcommand{\proponenteBairro}{BAIRRO COMPLETO}
+\newcommand{\proponenteCidade}{NOME DA CIDADE}
+\newcommand{\proponenteUF}{ES}
+\newcommand{\proponenteTelResidencial}{(27) 0000-0000}
+\newcommand{\proponenteTelCelular}{(27) 0000-0000}
+\newcommand{\proponenteTelComercial}{(27) 0000-0000}
+\newcommand{\proponenteInstituicao}{NOME COMPLETO DA INSTITUIÇÃO -- SIGLA}
+\newcommand{\proponenteDepartamento}{DEPARTAMENTO}
+\newcommand{\proponenteCargo}{CARGO}
+\newcommand{\proponenteEmails}{email1@provedor1.com.br; email2@provedor2.com.br}
+
+% Instituição Executora
+\newcommand{\instituicaoNome}{NOME COMPLETO DA INSTITUIÇÃO}
+\newcommand{\instituicaoSigla}{SIGLA}
+\newcommand{\instituicaoEndereco}{ENDEREÇO COMPLETO DA INSTITUIÇÃO}
+\newcommand{\instituicaoCNPJ}{00.000.000/0000-00}
+\newcommand{\instituicaoBairro}{BAIRRO COMPLETO}
+\newcommand{\instituicaoMunicipio}{MUNICÍPIO}
+\newcommand{\instituicaoUF}{ESPÍRITO SANTO}
+\newcommand{\instituicaoRepresentante}{NOME DO REPRESENTANTE}
+\newcommand{\instituicaoRepresentanteNacionalidade}{BRASILEIRO}
+\newcommand{\instituicaoRepresentanteCargo}{REITOR}
+\newcommand{\instituicaoRepresentanteCPF}{000.000.000-00}
+\newcommand{\instituicaoRepresentanteRG}{0.000.000}
+\newcommand{\instituicaoRepresentanteRGEmissor}{SPTC/ES}
+\newcommand{\instituicaoRepresentanteTelefone}{(00) 0000-0000}
+\newcommand{\instituicaoRepresentanteFax}{(00) 0000-0000}
+\newcommand{\instituicaoRepresentanteEmail}{email1@instituicao.br}
+
+\usepackage[none]{hyphenat}
+
+\hypersetup
+{
+    pdfauthor={\proponenteNome},
+    pdfsubject={Formulário FAPES de submissão -- Edital Universal},
+    pdftitle={\propostaNome},
+    pdfkeywords={}
+}
+
+
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\divint}{\operatornamewithlimits{div}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Propriedade}
+\sloppy
+
+
+
+\begin{document}
+%\maketitle
+%\thispagestyle{empty}
+
+\input{00-dadosprop}
+
+\input{05-instituicoes}
+
+\input{06-equipe}
+
+\input{07-identificacaoproposta}
+
+\input{08-resumo}
+
+\input{09-caracterizacaoproblema}
+
+\input{10-objetivogeral}
+
+\input{11-objetivoespecifico}
+
+\input{12-metodologia}
+
+\input{13-resultadosesperados}
+
+\input{14-experiencia}
+
+\input{15-planodemetas}
+
+\input{16-cronograma}
+
+\input{17-riscos}
+
+\input{18-importancia}
+
+\input{19-potencialformacaorh}
+
+\input{20-potencialnovaspesquisas}
+
+\bibliographystyle{plain}
+
+\bibliography{Fapes-Universal}
+
+\end{document}
